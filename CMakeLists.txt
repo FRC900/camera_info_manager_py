@@ -7,5 +7,7 @@ include_directories(include ${catkin_INCLUDE_DIRS})
 catkin_python_setup()
 catkin_package(CATKIN_DEPENDS sensor_msgs)
 
+if(CATKIN_ENABLE_TESTING) 
 # Unit test uses nose, but needs rostest to create a ROS environment.
 add_rostest(tests/unit_test.test)
+endif()
