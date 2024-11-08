@@ -435,7 +435,7 @@ def loadCalibrationFile(filename, cname):
     ci = CameraInfo()
     try:
         f = open(filename)
-        calib = yaml.load(f)
+        calib = yaml.safe_load(f)
         if calib is not None:
             if calib['camera_name'] != cname:
                 rospy.logwarn("[" + cname + "] does not match name " +
@@ -474,11 +474,11 @@ def parseURL(url):
         # look for a '/' following the package name, make sure it is
         # there, the name is not empty, and something follows it
 
-        rest = url.find('/', 10);
+        rest = url.find('/', 10)
         if rest < len(url)-1 and rest >= 0:
-            return URL_package;
+            return URL_package
 
-    return URL_invalid;
+    return URL_invalid
 
 def resolveURL(url, cname):
     """ Resolve substitution strings in Uniform Resource Locator.

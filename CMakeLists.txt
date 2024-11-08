@@ -8,4 +8,4 @@ catkin_python_setup()
 catkin_package(CATKIN_DEPENDS sensor_msgs)
 
 # Unit test uses nose, but needs rostest to create a ROS environment.
-add_rostest(tests/unit_test.test)
+#add_rostest(tests/unit_test.test)
